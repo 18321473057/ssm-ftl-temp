@@ -1,6 +1,6 @@
 package org.line.ssm.pojo;
 
-import java.sql.Date;
+import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -8,7 +8,7 @@ public class CommonBean {
     private Long id;
     private String userName;
     /**禁止序列化, 该字段不会被序列化到json中*/
-    @JsonIgnore
+//    @JsonIgnore
     private String passWord;
     private Date createTime;
     private Long createUserID;
