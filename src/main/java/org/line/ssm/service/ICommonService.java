@@ -8,9 +8,11 @@ import org.line.ssm.utils.page.pageParamVo;
 
 public interface ICommonService {
 
-    List<CommonBean> getBean(String userName,String passWord);
+    List<CommonBean> getBean(String userName, String passWord);
 
-    Long addBean( );
+    Long addBean();
 
     pageAjaxVo<CommonBean> queryByPage(pageParamVo page);
+
+    CommonBean getBeanById(Long  id);
 }

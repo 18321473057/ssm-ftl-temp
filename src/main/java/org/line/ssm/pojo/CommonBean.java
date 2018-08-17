@@ -2,16 +2,23 @@ package org.line.ssm.pojo;
 
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Table(name="commonbean")
 public class CommonBean {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String userName;
     /**禁止序列化, 该字段不会被序列化到json中*/
 //    @JsonIgnore
     private String passWord;
     private Date createTime;
-    private Long createUserID;
+    private Long createUserId;
 	public Long getId() {
 		return id;
 	}
@@ -36,19 +43,18 @@ public class CommonBean {
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
-	public Long getCreateUserID() {
-		return createUserID;
-	}
-	public void setCreateUserID(Long createUserID) {
-		this.createUserID = createUserID;
-	}
-	@Override
-	public String toString() {
-		return "CommonBean [id=" + id + ", userName=" + userName
-				+ ", passWord=" + passWord + ", createTime=" + createTime
-				+ ", createUserID=" + createUserID + "]";
-	}
-    
+    public Long getCreateUserId() {
+        return createUserId;
+    }
+    public void setCreateUserId(Long createUserId) {
+        this.createUserId = createUserId;
+    }
+    @Override
+    public String toString() {
+        return "CommonBean [id=" + id + ", userName=" + userName + ", passWord=" + passWord + ", createTime=" + createTime + ", createUserId=" + createUserId
+                + "]";
+    }
+ 
    
     
     

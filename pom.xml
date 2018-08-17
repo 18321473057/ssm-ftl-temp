@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-
+ 
 
 	<dependencies>
 		<!-- 单元测试 -->
@@ -85,12 +85,7 @@
 			<version>1.2.15</version>
 		</dependency>
 
-		<!-- 通用Mapper -->
-		<dependency>
-			<groupId>tk.mybatis</groupId>
-			<artifactId>mapper</artifactId>
-			<version>3.3.9</version>
-		</dependency>
+	 
 
 		<!-- MySql -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -203,8 +198,14 @@
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>2.3.23</version>
+		</dependency> 
+	 	<!-- 通用mapper -->
+		<dependency>
+		    <groupId>tk.mybatis</groupId>
+		    <artifactId>mapper</artifactId>
+		    <version>3.1.2</version>
 		</dependency>
-
+ 
 
 	</dependencies>
 

@@ -1,6 +1,6 @@
 ssm
 ftl
 datatables
-mybatis 分页插件
+mybatis 分页插件 .通用mapper
 
 

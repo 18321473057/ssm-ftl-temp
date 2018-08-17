@@ -10,20 +10,23 @@
 	<!-- 构造SqlSessionFactory -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 定义数据源 -->
-		<property name="dataSource" ref="dataSource"/>
+		<property name="dataSource" ref="dataSource" />
 		<!-- mybatis-config.xml -->
-		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
 		<!-- 别名包 -->
-		<property name="typeAliasesPackage" value="org.line.ssm.pojo"/>
+		<property name="typeAliasesPackage" value="org.line.ssm.pojo" />
 		<!-- mapper.xml -->
-		<property name="mapperLocations" value="classpath:mybatis/mappers/*.xml"/>
+		<property name="mapperLocations" value="classpath:mybatis/mappers/*.xml" />
 	</bean>
-	
-	<!-- 定义Mapper接口扫描器  扫描指定包下面的Mapper，并且自动注入到bean中 -->
+
+	<!-- 定义Mapper接口扫描器 扫描指定包下面的Mapper，并且自动注入到bean中 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 扫描mapper包 -->
-		<property name="basePackage" value="org.line.ssm.mapper"/>
+		<property name="basePackage" value="org.line.ssm.mapper" />
 	</bean>
-	
-	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.isea533.mybatis.mapper" />
+	</bean>
+
+
 </beans>

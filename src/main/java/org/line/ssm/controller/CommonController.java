@@ -17,42 +17,47 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("common")
 public class CommonController {
 
-	@Autowired
-	private ICommonService commonService;
+    @Autowired
+    private ICommonService commonService;
 
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(CommonController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CommonController.class);
 
-	// 测试基本功能
-	@RequestMapping(value = "login", method = RequestMethod.GET)
-	@ResponseBody
-	public ModelAndView login() {
-		return new ModelAndView("/common.ftl");
-	}
+    // 测试基本功能
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView login() {
+        return new ModelAndView("/common.ftl");
+    }
 
-	/**
-	 * datatable 分页接口
-	 * */
-	@RequestMapping("/list")
-	@ResponseBody
-	public pageAjaxVo<CommonBean> queryList(pageParamVo page) {
-		pageAjaxVo<CommonBean> byPage = commonService.queryByPage(page);
-		return byPage;
-	}
+    /**
+     * datatable 分页接口
+     * */
+    @RequestMapping("/list")
+    @ResponseBody
+    public pageAjaxVo<CommonBean> queryList(pageParamVo page) {
+        pageAjaxVo<CommonBean> byPage = commonService.queryByPage(page);
+        return byPage;
+    }
 
-	// 测试事物
-	@RequestMapping("addBean")
-	@ResponseBody
-	public String addBean() {
-		String msg = "success";
-		try {
-			commonService.addBean();
-		} catch (Exception e) {
-			msg = "发生了错误信息";
-			LOGGER.error(
-					"org.line.ssm.controller.CommonController.addBean()发生了异常",
-					e);
-		}
-		return msg;
-	}
+    // 测试事物
+    @RequestMapping("addBean")
+    @ResponseBody
+    public String addBean() {
+        String msg = "success";
+        try {
+            commonService.addBean();
+        } catch (Exception e) {
+            msg = "发生了错误信息";
+            LOGGER.error("org.line.ssm.controller.CommonController.addBean()发生了异常", e);
+        }
+        return msg;
+    }
+    
+    
+    // 测试事物
+    @RequestMapping("getBeanByName")
+    @ResponseBody
+    public CommonBean getBeanByName() {
+        return  commonService.getBeanById(1L);
+    }
 }
